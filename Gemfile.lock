@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.6.1)
+    colorize (0.7.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  colorize
+
+BUNDLED WITH
+   1.10.6
