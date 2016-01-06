@@ -16,7 +16,7 @@ So, because I'm not an AI expert (even if my bachelor thesis was about some incr
 Here a [terminal dialog interaction](http://showterm.io/e9d405f7af8d8c9902f69#fast) (thanks http://showterm.io ), testing List dialog.
 
 <p align="center">
-![terminal_example](/root/dialogs/wiki/img/terminal/terminal_example.jpg)
+![](https://github.com/solyaris/dialogs/blob/master/wiki/img/terminal_example.jpg)
 </p>
 
 ## Elemental dialog as a Finite State Machine
