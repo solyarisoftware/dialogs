@@ -3,16 +3,13 @@
 require 'awesome_print'
 require 'colorize'
 
-require_relative 'lib/dialog'
-require_relative 'lib/session'
-require_relative 'lib/adapters/stdio'
+require_relative 'engine/dialog'
+require_relative 'engine/session'
+require_relative 'engine/adapters/stdio'
 
 
 def trap_ctrlc
   trap('INT') do
-    # Marshal.dump @notified_orders_set
-    #File.open(@notified_orders_filename,'w') { |file| Marshal.dump(@notified_orders_set, file) }
-
     puts
     puts Session.load.to_s.yellow
     puts
@@ -44,3 +41,4 @@ trap_ctrlc
 # start Dialog as a terminal chat
 #
 Dialog.run ClientAdapter::Terminal
+

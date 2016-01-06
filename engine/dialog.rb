@@ -157,7 +157,7 @@ module Dialogs
     # call the method corresponding to the actual state
     #
     def request(user_data)
-      self.method(state).call(user_data) # unless (:end == state)
+      self.method(state).call(user_data)
     end
 
 
