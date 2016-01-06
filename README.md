@@ -12,7 +12,12 @@ This project consider the online-shopping with a chatbot (someone call this: *co
 
 So, because I'm not an AI expert (even if my bachelor thesis was about some incremental learning of ARTMAP neural networks), my approach here is very naif bottom-up. I'm not proposing here some artificial intelligence 'top-down' approach, but instead a simple chatbot dialog system able to conversate with a human to achive a spefic 'deterministic' simple workflow: as examples as *conversational services*: to guide a buyer of an ecommerce to submit an online shopping order, to guide user to do some financial or payment transactions, to book some service conversting with a chatbot, all in all almost anything you now do now interacting with a visual website, Last but not least supplying a 'text adventure' in games realms or on a gamification of boring process (banking)! So lets's start with the state-machine approach. Happy reading! 
 
+### Instant gratification
+Here a [terminal dialog interaction](http://showterm.io/e9d405f7af8d8c9902f69#fast) (thanks http://showterm.io ), testing List dialog.
 
+<p align="center">
+![terminal_example](/root/dialogs/wiki/img/terminal/terminal_example.jpg)
+</p>
 
 ## Elemental dialog as a Finite State Machine
 
