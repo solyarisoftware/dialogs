@@ -1,23 +1,23 @@
 # (( dialogs ))
-Conversational machines for chatbot services.
+Conversational machines for chat bot services.
 
 
 ## Introduction / Motivation
 
 I'm not a NLP (natural language processing) expert, I confess in advance, but I'm obsessioned to find a smart software implementation for this specific goal:
 
-> To find a simple solution to allow people use instant messengers to conversate with a chatbots to get someapplication/business services, by example in e-commerce/e-payment realms. 
+> To find a simple solution to allow people use instant messengers to converse with a chat bots to get some application/business services, by example in e-commerce/e-payment realms. 
 
-As a proof of concept, I consider hre an hypotetical online-shopping chatbot service (someone call this: *conversational commerce*) as a real application example of what I mean with term *service*. 
+As a proof of concept, I consider here an hypothetical online-shopping chat bot service (someone call this: *conversational commerce*) as a real application example of what I mean with term *service*. 
 
 ### Conversational chatbot services ?
-My conversational machine approach is very naif. I call it a  *bottom-up* way, in opposition to fashioned artificial intelligence *top-down* approach tring to emulate a vast colloquial intelligence. Instead my goal is to realize simple, **specialized** chatbot *dialog systems* able to conversate with a human to achive a specific 'deterministic' simple workflow on some specific business context: as example of these *conversationalb chatbot services*, imagine a dialog system that guide a buyer of an ecommerce shop chatbot to submit an online shopping order, or that guide user to do some financial or payment transactions, or to book some service conversating with a chatbot, all in all almost anything you now do interacting with a visual website, Last but not least supplying a 'text adventure' in games realms or on a gamification of some  'boring' banking processes. 
+My conversational machine approach is very naif. I call it a  *bottom-up* way, in opposition to fashioned artificial intelligence *top-down* approach trying to emulate a vast colloquial intelligence. Instead my goal is to realize simple, **specialized** chat bot *dialog systems* able to converse with a human to achieve a specific 'deterministic' simple workflow on some specific business context: as example of these *conversational chatbot services*, imagine a dialog system that guide a buyer of an ecommerce shop chatbot to submit an online shopping order, or that guide user to do some financial or payment transactions, or to book some service conversing with a chatbot, all in all almost anything you now do interacting with a visual website, Last but not least supplying a 'text adventure' in games realms or on a gamification of some  'boring' banking processes. 
 
 ## Elemental dialog as a Finite State Machine
 
 My basic gist have been:
 
-> **To model natural language dialogs, between a person and a chatbot, as *state machines-based* *elementals* (atomic) dialogs that can be composed togheter to achive some more complex workflow goal (service).** 
+> **To model natural language dialogs, between a person and a chatbot, as *state machines-based* *elementals* (atomic) dialogs that can be composed together to achieve some more complex workflow goal (service).** 
 
 
 ### The simplest dialog: Request/Reply 
@@ -162,7 +162,7 @@ the list abstract dialog manage a list data structure, so an Array, in Ruby lang
   # initial data for a (void) list
   [] 
 ```
-At the end of the dialog, output data could be an array containing some items (text strings). By example, if the list is a shopping cart to order some food to a pizza-maker, data culd be something like this:
+At the end of the dialog, output data could be an array containing some items (text strings). By example, if the list is a shopping cart to order some food to a pizza-maker, data could be something like this:
 
 ```
   # final data for a ShoppingCartList, after a dialog interaction
@@ -218,17 +218,17 @@ module Dialogs
     end
 ```
 
-My choice have been to made each dialog *language agnostic*, moving internationalization/natural language transaltions in separate files (one for each language: by example: `list_lang_it.rb` for Italian language, `list_lang_en.rb` for English, etc.).
+My choice have been to made each dialog *language agnostic*, moving internationalization/natural language translations in separate files (one for each language: by example: `list_lang_it.rb` for Italian language, `list_lang_en.rb` for English, etc.).
 
-> Implementation code Note: I feel that incapsulate literals inside methods is a compromise, interms od readibility and performance, between a spaghetti-code (hard-code texts inside the state machine logic code), and using some template engine (at first my aim was to use Michel Mertens' mote gem, but I now prefer the text-inside-methods approach). Also the choice to use regex to process user choice is opinable, I admit. A temporary decision
+> Implementation code Note: I feel that encapsulate literals inside methods is a compromise, in terms of readibility and performance, between a spaghetti-code (hard-code texts inside the state machine logic code), and using some template engine (at first my aim was to use Michel Mertens' mote gem, but I now prefer the text-inside-methods approach). Also the choice to use regex to process user choice is debatable, I admit. A temporary decision
 
 #### Language-agnostic dialogs ?
 
-I thinked **((dialogs))** project as a man-machine text (or speech) based interface among people and chatbots. So when we refer to 'languages', we mean *natural languages*! That's pretty correct, but please note **((dialogs))** fully separate the state machine logic from any specific language, that coud be neither a natural language, neither a 'text-based' stream! In facts you could imagine language requests/replies in any sort of *binary-format*! By example we could imagine [MessagePack](http://msgpack.org/), as a possible language; in this case we can consider the dialog system as a machine-to-machine communication meta-language.
+I thought **((dialogs))** project as a man-machine text (or speech) based interface among people and chatbots. So when we refer to 'languages', we mean *natural languages*! That's pretty correct, but please note **((dialogs))** fully separate the state machine logic from any specific language, that could be neither a natural language, neither a 'text-based' stream! In facts you could imagine language requests/replies in any sort of *binary-format*! By example we could imagine [MessagePack](http://msgpack.org/), as a possible language; in this case we can consider the dialog system as a machine-to-machine communication meta-language.
 
 
 ## Introspection and helpers
-Each dialog state is associated to a relative `help` method (pseudo-state) that reply to user the possible choices/action on the relative state. In this way user alway know 'how to do' in a dialog conversation, asking 'help' about what to do. I call thisi *state introspection*. 
+Each dialog state is associated to a relative `help` method (pseudo-state) that reply to user the possible choices/action on the relative state. In this way user alway know 'how to do' in a dialog conversation, asking 'help' about what to do. I call this: *state introspection*. 
 
 >TODO: At a higher level each dialog elemental must be instrospected asking a description of the dialog. This could be done just with a description text file associated to the dialog. 
 
@@ -288,9 +288,9 @@ order     |     +----------+     +-----------------+     +--------------+    |  
 
 ## Performance vs Intelligence trade-off
 
-There is some Natural Language Understanding in this scenario ? The state-machine implementation of a dialog is a dump / imperative / 'robotic' way to conceive a dialog with a human, and there is not a real 'deep' understanding or learning. Pretty true, I admit. In the dialog analyzed here as example, the semantic understanding/interpretation is 'delgated' inside the `Item::interpret` method on the `add_item `state method. The understanding of a product item, inserted by user, is delegated to this interpret method. 
+There is some Natural Language Understanding in this scenario ? The state-machine implementation of a dialog is a dump / imperative / 'robotic' way to conceive a dialog with a human, and there is not a real 'deep' understanding or learning. Pretty true, I admit. In the dialog analyzed here as example, the semantic understanding/interpretation is 'delegated' inside the `Item::interpret` method on the `add_item `state method. The understanding of a product item, inserted by user, is delegated to this interpret method. 
 
->**There is no any (artificial) intelligence in this dialog system framework, I admit, but the trade-off is simplicity (short simple fast interactions are very important for a business service supplyed by a chatbot upon an instant messagimg app. Speed performance and focus on target goal (to supply a specific domain service with a deterministic dialog)!**
+>**There is no any (artificial) intelligence in this dialog system framework, I admit, but the trade-off is simplicity (short simple fast interactions are very important for a business service supplied by a chatbot upon an instant messaging app. Speed performance and focus on target goal (to supply a specific domain service with a deterministic dialog)!**
 
 
 ### User interaction means Supervisioned Learning for free
@@ -305,14 +305,14 @@ BTW,i in Italy "Pizza Margherita" is the basic kind of pizza and "aggiunta: nolt
 
 A possible smart NLP domain expert system could recognize that user want nr.1 of product type: pizza Margherita, with add-on: "many capers". Maybe the *semantic backend processor* could access a product catalog database o verify if the shop is really able to delivery this kind of product. Finally the processor could ask the user a doublecheck confirmation on inserted item. If the user finally say "yes! I want it!", in this case we can say that the system can really learn in a supervised, production-ready way!
 
-Again, this understanding/learning process is out of scope from the state-machine architecture. But this state-machine dialog-driven system is a framewrk to focus some domain specific "intelligent" backend expert, just to a very specific domain (in the case of the example: to recognize an item an learn/take decision about it). 
+Again, this understanding/learning process is out of scope from the state-machine architecture. But this state-machine dialog-driven system is a framework to focus some domain specific "intelligent" backend expert, just to a very specific domain (in the case of the example: to recognize an item an learn/take decision about it). 
 
-> **(dialog))** could be considered as a driven dialog framework that incapsulate an external "expert system".
+> **(dialog))** could be considered as a driven dialog framework that encapsulate an external "expert system".
 
 
 ## Instant Messaging Plug-in Architecture
 
-I conceived ((dialog)) having in mind amazing Telegram.org Bot Platform, but my aim is to realize the dialog system as a server (in a client-server architecture) indipendent from any specific instant messaging platform / APIs. For this reason I started to code interchargeable *client adapters*
+I conceived ((dialog)) having in mind amazing Telegram.org Bot Platform, but my aim is to realize the dialog system as a server (in a client-server architecture) independent from any specific instant messaging platform / APIs. For this reason I started to code interchangeable *client adapters*
 
 > TODO: implement **((dialogs))** as a socket/tcp server, implementing something like [Ruby TCP Chat](http://www.sitepoint.com/ruby-tcp-chat/).
 
