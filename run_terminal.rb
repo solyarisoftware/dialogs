@@ -26,11 +26,12 @@ end
 Dialog.require :command
 Dialog.require :order
 Dialog.require :list
+Dialog.require :ask
 
 #
 # initial default session (start from main dialog)
 #
-Dialog.root Command
+Dialog.root Command #Ask
 
 #
 # CTRl-C to exit the loop 

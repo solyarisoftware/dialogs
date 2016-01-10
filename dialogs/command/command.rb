@@ -1,5 +1,5 @@
 #
-# main.rb
+# command.rb
 #
 module Dialogs 
   #

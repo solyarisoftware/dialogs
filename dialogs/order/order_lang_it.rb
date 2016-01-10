@@ -1,5 +1,5 @@
 #
-# order_text_it.rb
+# order_lang_it.rb
 #
 module Dialogs 
   class Order < Dialog

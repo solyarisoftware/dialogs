@@ -1,9 +1,9 @@
 #
-# list.rb
+# order.rb
 #
 module Dialogs 
   #
-  # List dialog
+  # TODO
   # collect an item list 
   #
   class Order < Dialog
@@ -17,11 +17,10 @@ module Dialogs
     #
     def start(text)
       call List
-      #go :order
     end
 
     #
-    # state: order
+    # state: finish
     #
     def finish(value)
       back

@@ -1,5 +1,5 @@
 #
-# main.rb
+# command_lang_it.rb
 #
 module Dialogs 
   #
