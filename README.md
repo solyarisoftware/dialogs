@@ -1,7 +1,6 @@
 # (( dialogs ))
-A dialog system framework for instant messaging services. 
-
-Conversations as a compositions of finite-state machine, to delivery business application on tect/speech-based chat bots.
+A dialog system framework for instant messaging services.<br>
+Conversations as a compositions of finite-state machine-based dialogs, to delivery business application through text/speech chat bots.
 
 ## Introduction / Motivation
 
