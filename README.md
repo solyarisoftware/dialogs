@@ -1,6 +1,7 @@
 # (( dialogs ))
-Conversational machines for chat bot services.
+Conversational workflows for chatbot services. 
 
+I propose here a dialog system framework to support real business application services, running as chatbots on instant messengers. Conversational workflow means to model a conversation as a compositions of finite-state machine dialogs.
 
 ## Introduction / Motivation
 
@@ -10,12 +11,15 @@ I'm not a NLP (natural language processing) expert, I confess in advance, but I'
 
 As a proof of concept, I consider here an hypothetical online-shopping chat bot service (someone call this: *conversational commerce*) as a real application example of what I mean with term *service*. 
 
-### Conversational chatbot services ?
-My conversational machine approach is very naif. I call it a  *bottom-up* way, in opposition to fashioned artificial intelligence *top-down* approach trying to emulate a vast colloquial intelligence. Instead my goal is to realize simple, **specialized** chat bot *dialog systems* able to converse with a human to achieve a specific 'deterministic' simple workflow on some specific business context: as example of these *conversational chatbot services*, imagine a dialog system that guide a buyer of an ecommerce shop chatbot to submit an online shopping order, or that guide user to do some financial or payment transactions, or to book some service conversing with a chatbot, all in all almost anything you now do interacting with a visual website, Last but not least supplying a 'text adventure' in games realms or on a gamification of some  'boring' banking processes. 
 
-## Elemental dialog as a Finite State Machine
+### Conversational workflows ?
 
-My basic gist have been:
+My approach is very naif; I call it a  *bottom-up* way, in opposition to fashioned artificial intelligence *top-down* approach trying to emulate a vast colloquial intelligence. Instead my goal is to realize simple, **specialized** chat bot *dialog systems* able to converse with a human to achieve a specific 'deterministic' simple *workflows* on some specific business context: as example of these *conversational chatbot services*, imagine a *dialog system* that guide a buyer of an ecommerce shop, implemented as a instant messaging bot, to submit an online shopping order, or that guide user to do some financial, banking or any payment transaction, or to book some service conversing with a chatbot. Conversational workflows through instant messging could be the alternative to web paradigma now accesible via website/mobile apps.
+
+
+## Each *elemental dialog* as a finite state machine
+
+The basic gist:
 
 > **To model natural language dialogs, between a person and a chatbot, as *state machines-based* *elementals* (atomic) dialogs that can be composed together to achieve some more complex workflow goal (service).** 
 
@@ -130,7 +134,7 @@ module Dialogs
     end    
 ```
 
-#### State triggering
+#### Dialog state triggering
 How states are triggered ? The 'engine' of a dialog is just a standard read-evaluate-print-loop ([REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) done by the `request` method of abstract class `Dialog`:
 
 ```Ruby
@@ -174,7 +178,7 @@ At the end of the dialog, output data could be an array containing some items (t
    ]
 ```
 
-Generally speaking, I see data as a specific attribute of the elemental dialog type, so data are conceptually different for each dialog type. Data are the result of a conversation, to be eventually processed by some external (to dialog) service that *consume* data.
+Generally speaking, I see data as a specific attribute of each elemental dialog type, so data are conceptually different for each dialog type. Data are the result of a conversation, to be eventually processed by some external (to dialog) service that *consume* data.
 
 > TODO: data management and processing concept is still incomplete and code to be refined.
 
@@ -222,7 +226,7 @@ My choice have been to made each dialog *language agnostic*, moving internationa
 
 > Implementation code Note: I feel that encapsulate literals inside methods is a compromise, in terms of readibility and performance, between a spaghetti-code (hard-code texts inside the state machine logic code), and using some template engine (at first my aim was to use Michel Mertens' mote gem, but I now prefer the text-inside-methods approach). Also the choice to use regex to process user choice is debatable, I admit. A temporary decision
 
-#### Language-agnostic dialogs ?
+#### Language-agnostic ?
 
 I thought **((dialogs))** project as a man-machine text (or speech) based interface among people and chatbots. So when we refer to 'languages', we mean *natural languages*! That's pretty correct, but please note **((dialogs))** fully separate the state machine logic from any specific language, that could be neither a natural language, neither a 'text-based' stream! In facts you could imagine language requests/replies in any sort of *binary-format*! By example we could imagine [MessagePack](http://msgpack.org/), as a possible language; in this case we can consider the dialog system as a machine-to-machine communication meta-language.
 
@@ -246,7 +250,7 @@ Ruby class `Session` is in charge to store/retrieve a storage (in-memory or pers
 >- add a suitable session persistence to disk (a key/value like REDIS or relational DB), maybe using Moneta gem.
 
 
-## Application dialogs as compositions of elementals 
+## Application dialogs as compositions of elementals
 
 A complex dialog in some *real application* could be see as a composition of elemental-subdialogs (each of these modeled as a state-machine) and part of a library of *subjects*. In this Ruby language implementation, each sub-dialog is represented as a subclass of abstract `Dialog`.
 
@@ -283,7 +287,7 @@ order     |     +----------+     +-----------------+     +--------------+    |  
 
 ### Dialogs Taxonomy
 
-> TODO: think about it.
+> TODO: think about it. Explain the difference between *abstract* dialog (as an abstract dialog) and *application* dialog (as an instance of the abstract dialog, personalized for some application context).
 
 
 ## Performance vs Intelligence trade-off
