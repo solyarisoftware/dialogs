@@ -1,13 +1,13 @@
 # (( dialogs ))
-Conversational workflows for chatbot services. 
+A dialog system framework for instant messaging services. 
 
-I propose here a dialog system framework to support real business application services, running as chatbots on instant messengers. Conversational workflow means to model a conversation as a compositions of finite-state machine dialogs.
+Conversations as a compositions of finite-state machine, to delivery business application on tect/speech-based chat bots.
 
 ## Introduction / Motivation
 
-I'm not a NLP (natural language processing) expert, I confess in advance, but I'm obsessioned to find a smart software implementation for this specific goal:
+I'm not a NLP (natural language processing) expert, I confess in advance, but I'm obsessioned to find a pratical software implementation for this specific goal:
 
-> To find a simple solution to allow people use instant messengers to converse with a chat bots to get some application/business services, by example in e-commerce/e-payment realms. 
+> **To find a simple solution to allow people use instant messengers to converse with a chat bots to get some application/business services, by example in e-commerce/e-payment realms.** 
 
 As a proof of concept, I consider here an hypothetical online-shopping chat bot service (someone call this: *conversational commerce*) as a real application example of what I mean with term *service*. 
 
