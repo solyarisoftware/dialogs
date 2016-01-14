@@ -1,6 +1,5 @@
 # (( dialogs ))
-A dialog system framework for instant messaging services.<br>
-Conversations as a compositions of finite-state machine-based dialogs, to delivery business application through text/speech chat bots.
+A dialog system for workflows, means: conversations as a compositions of finite-state machine-based dialogs, to delivery business application for instant messaging services through text/speech chat bots.
 
 ## Introduction / Motivation
 
@@ -36,17 +35,19 @@ The black-box realize some elaborations on input data, producing output data:
 * output data: some data produced after the elaboration of user request/interaction
 
 ```
-                   input data
-                   |
-                   v                          
-                 +------------------------------------+
-       request   | chatbot                            |  reply
-user ----------> | elaboration =                      | -------> user
-                 | user interaction + data processing |     
-                 +------------------------------------+     
-                                                    |
-                                                    v
-                                          output data
+                         input data
+                               |
+                               v                          
++------+              +-------------------+
+|      |  request     | chatbot           |       
+|      |  ----------> | elaboration =     |
+| user |              |                   |
+|      |  <---------- | user interaction  | 
+|      |        reply | + data processing |     
++------+              +-------------------+     
+                               |
+                               v
+                        output data
                                         
 ```  
 
@@ -338,8 +339,8 @@ The first *client adapter* is the terminal.  Here a [terminal dialog interaction
 > Ruby implementation is bad now and really incomplete. I apologize and any contribution/help on coding is very welcome.
 
 # References 
-- my bachelor thesis was about some [incremental learning of ARTMAP neural networks](http://giorgiorobino.altervista.org)).
-
+- A collection of links to Ruby Natural Language Processing [ruby-nlp](https://github.com/diasks2/ruby-nlp).
+- my bachelor thesis was about some [incremental learning of ARTMAP neural networks](http://giorgiorobino.altervista.org).
 
 # Contact
 
