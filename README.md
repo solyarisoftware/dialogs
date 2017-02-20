@@ -1,3 +1,6 @@
+# This project isa abandoned and substituted with [naif](https://github.com/solyaris/naif) 
+
+
 # (( dialogs ))
 A dialog system for workflows, means: conversations as a compositions of finite-state machine-based dialogs, to delivery business application for instant messaging services through text/speech chat bots.
 
